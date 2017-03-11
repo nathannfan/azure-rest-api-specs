@@ -2131,7 +2131,7 @@
             "CLUSTERED COLUMNSTORE"
           ],
           "type": "string",
-          "description": "The type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE)",
+          "description": "The type of index.",
           "x-ms-enum": {
            "name": "RecommendedIndexTypes"
           }
