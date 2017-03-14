@@ -475,7 +475,7 @@
                 },
                 "storageUri": {
                     "type": "string",
-                    "description": "The storage uri to use."
+                    "description": "The storage uri of the source bacpac file."
                 },
                 "administratorLogin": {
                     "type": "string",

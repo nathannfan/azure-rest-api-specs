@@ -229,7 +229,7 @@
       },
       "allOf": [
         {
-          "$ref": "#/definitions/SqlSubResource"
+          "$ref": "./resource.json#/definitions/SqlSubResource"
         }
       ],
       "description": "Represents a server firewall rule."

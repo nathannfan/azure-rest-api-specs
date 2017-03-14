@@ -358,7 +358,7 @@
       },
       "allOf": [
         {
-          "$ref": "#/definitions/SqlSubResource"
+          "$ref": "./resource.json#/definitions/SqlSubResource"
         }
       ],
       "description": "Represents a database replication link."
@@ -375,22 +375,6 @@
       },
       "description": "Represents the response to a List database replication link request."
     },
-    "SqlSubResource": {
-      "description": "Subresource properties",
-      "properties": {
-        "name": {
-          "readOnly": true,
-          "type": "string",
-          "description": "Resource name"
-        },
-        "id": {
-          "readOnly": true,
-          "type": "string",
-          "description": "The resource ID."
-        }
-      }
-    }
-  },
   "parameters": {
     "SubscriptionIdParameter": {
       "name": "subscriptionId",

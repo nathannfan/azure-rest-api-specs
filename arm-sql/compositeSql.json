@@ -7,6 +7,7 @@
     "./2014-04-01/swagger/firewallRules.json",
     "./2014-04-01/swagger/importExport.json",
     "./2014-04-01/swagger/replicationLinks.json",
+    "./2014-04-01/swagger/resource.json",
     "./2014-04-01/swagger/sql.core.json"
   ]
 }
