@@ -333,6 +333,11 @@
           "$ref": "#/definitions/ServerProperties",
           "description": "Represents the properties of the resource.",
           "x-ms-client-flatten": true
+        },
+          "identity": {
+          "readOnly": true,
+          "$ref": "#/definitions/ServerIdentity",
+          "description": "The identity of the server, if configured."
         }
       },
       "allOf": [
@@ -397,6 +402,33 @@
           }
         }
       }
+    },
+    "ServerIdentity": {
+      "properties": {
+        "principalId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The principal id of the server identity."
+        },
+        "tenantId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The tenant id associated with the server identity."
+        },
+        "identityType": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of identity used for the server. Currently, the only supported type is 'SystemAssigned', which implicitly creates an identity.",
+          "enum": [
+            "SystemAssigned"
+          ],
+          "x-ms-enum": {
+            "name": "ResourceIdentityType",
+            "modelAsString": false
+          }
+        }
+      },
+      "description": "Identity for the server."
     }
   },
   "parameters": {
