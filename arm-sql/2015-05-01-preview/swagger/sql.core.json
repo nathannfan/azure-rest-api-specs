@@ -24,7 +24,9 @@
         "operationId": "Servers_List",
         "description": "Returns a list of servers.",
         "x-ms-examples": {
-          "List servers": { "$ref": "../examples/ServerList.json" }
+          "List servers": {
+            "$ref": "../examples/ServerList.json"
+          }
         },
         "parameters": [
           {
@@ -55,8 +57,12 @@
         "operationId": "Servers_CreateOrUpdate",
         "description": "Creates or updates a new server.",
         "x-ms-examples": {
-          "Create server min": { "$ref": "../examples/ServerCreateMin.json" },
-          "Create server max": { "$ref": "../examples/ServerCreateMax.json" }
+          "Create server min": {
+            "$ref": "../examples/ServerCreateMin.json"
+          },
+          "Create server max": {
+            "$ref": "../examples/ServerCreateMax.json"
+          }
         },
         "parameters": [
           {
@@ -103,7 +109,9 @@
         "operationId": "Servers_Delete",
         "description": "Deletes a SQL server.",
         "x-ms-examples": {
-          "Delete SQL Server": { "$ref": "../examples/ServerDelete.json" }
+          "Delete SQL Server": {
+            "$ref": "../examples/ServerDelete.json"
+          }
         },
         "parameters": [
           {
@@ -135,7 +143,9 @@
         "operationId": "Servers_Get",
         "description": "Gets a server.",
         "x-ms-examples": {
-          "Get Server": { "$ref": "../examples/ServerGet.json" }
+          "Get Server": {
+            "$ref": "../examples/ServerGet.json"
+          }
         },
         "parameters": [
           {
@@ -169,7 +179,9 @@
         "operationId": "Servers_ListByResourceGroup",
         "description": "Returns a list of servers in a resource group.",
         "x-ms-examples": {
-          "List servers by resource group": { "$ref": "../examples/ServerListByResourceGroup.json" }
+          "List servers by resource group": {
+            "$ref": "../examples/ServerListByResourceGroup.json"
+          }
         },
         "parameters": [
           {
@@ -219,57 +231,57 @@
     }
   },
   "definitions": {
-    "Resource":{
-      "description":"ARM resource.",
-      "properties":{  
-        "id":{  
-          "readOnly":true,
-          "type":"string",
-          "description":"Resource ID."
+    "Resource": {
+      "description": "ARM resource.",
+      "properties": {
+        "id": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource ID."
         },
-        "name":{  
-          "readOnly":true,
-          "type":"string",
-          "description":"Resource name."
+        "name": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource name."
         },
-        "type":{  
-          "readOnly":true,
-          "type":"string",
-          "description":"Resource type."
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource type."
         }
       },
       "x-ms-azure-resource": true
     },
-    "TrackedResource":{  
-      "description":"ARM tracked top level resource.",
-      "properties":{  
-        "tags":{  
-          "type":"object",
-          "additionalProperties":{  
-            "type":"string"
+    "TrackedResource": {
+      "description": "ARM tracked top level resource.",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
           },
-          "x-ms-mutability":[  
+          "x-ms-mutability": [
             "read",
             "create",
             "update"
           ],
-          "description":"Resource tags."
+          "description": "Resource tags."
         },
-        "location":{  
-          "type":"string",
-          "x-ms-mutability":[  
+        "location": {
+          "type": "string",
+          "x-ms-mutability": [
             "read",
             "create"
           ],
-          "description":"Resource location."
+          "description": "Resource location."
         }
       },
-      "required":[  
+      "required": [
         "location"
       ],
-      "allOf":[  
-        {  
-          "$ref":"#/definitions/Resource"
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
         }
       ]
     },
@@ -282,22 +294,31 @@
         },
         "version": {
           "type": "string",
-          "enum": ["2.0", "12.0"],
+          "enum": [
+            "2.0",
+            "12.0"
+          ],
           "description": "The version of the server.",
           "x-ms-enum": {
-              "name": "ServerVersion",
-              "modelAsString": true
+            "name": "ServerVersion",
+            "modelAsString": true
           }
         },
         "administratorLogin": {
           "type": "string",
           "description": "Administrator username for the server. Can only be specified when the server is being created (and is required for creation).",
-          "x-ms-mutability": [ "create", "read" ]
+          "x-ms-mutability": [
+            "create",
+            "read"
+          ]
         },
         "administratorLoginPassword": {
           "type": "string",
           "description": "The administrator login password (required for server creation).",
-          "x-ms-mutability": [ "create", "update" ]
+          "x-ms-mutability": [
+            "create",
+            "update"
+          ]
         },
         "externalAdministratorSid": {
           "readOnly": true,
@@ -314,9 +335,12 @@
           "readOnly": true,
           "type": "string",
           "description": "The state of the server.",
-          "enum": ["Ready", "Disabled"],
+          "enum": [
+            "Ready",
+            "Disabled"
+          ],
           "x-ms-enum": {
-              "name": "ServerState"
+            "name": "ServerState"
           }
         }
       },
@@ -333,6 +357,11 @@
           "$ref": "#/definitions/ServerProperties",
           "description": "Represents the properties of the resource.",
           "x-ms-client-flatten": true
+        },
+        "identity": {
+          "readOnly": true,
+          "$ref": "#/definitions/ServerIdentity",
+          "description": "The identity of the server, if configured."
         }
       },
       "allOf": [
@@ -352,11 +381,13 @@
           "description": "The list of servers."
         }
       },
-      "required": ["value"],
+      "required": [
+        "value"
+      ],
       "description": "Represents the response to a get server request."
     },
     "OperationListResult": {
-     "description": "Result of the request to list SQL operations. It contains a list of operations and a URL link to get the next set of results.",
+      "description": "Result of the request to list SQL operations. It contains a list of operations and a URL link to get the next set of results.",
       "properties": {
         "value": {
           "type": "array",
@@ -397,6 +428,33 @@
           }
         }
       }
+    },
+    "ServerIdentity": {
+      "properties": {
+        "principalId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The principal id of the server identity."
+        },
+        "tenantId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The tenant id associated with the server identity."
+        },
+        "identityType": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of identity used for the server. Currently, the only supported type is 'SystemAssigned', which implicitly creates an identity.",
+          "enum": [
+            "SystemAssigned"
+          ],
+          "x-ms-enum": {
+            "name": "ResourceIdentityType",
+            "modelAsString": false
+          }
+        }
+      },
+      "description": "Identity for the server."
     }
   },
   "parameters": {
